@@ -1,0 +1,53 @@
+* Azure Data Centers
+
+** Datacenters
+- These resources obviously require a physical server space to be created. A datacenter is simply a building that contains the physical server. Not just one server, many many physical servers which are connected over a network. It also has it's own power, and cooling. 
+
+- So, in simple terms, an Azure data center is a unique physical building that contains many many physical servers with it's own power, cooling and networking infrastructure. These data ceneters are located all over the globe. there are over 160+ Azure datacenters worldwide. The exact location of these datacenters is not published by Microsoft for obvious security reasons. It is these dataceneters that are the building blocks of gloabl Azure infrastructure.
+
+** Regions
+
+- an Azure Region is a set of Datacenters that are connected through a dedicated low-latency network. How many datacenters does a region contain. Well, we do not have a fixed number. It varies. There are regions of different sizes. A Region could be made up of just 1 dataceneter or multiple datacenters. The point is, an Azure Region is a group of one or more Azure Datacenters. 
+
+You have the flexibility to deploy your applications and data to any Azure region you want. You can even deploy across multiple regions to deliver cross-region resiliency.
+
+*** cross-region resiliency
+
+- resilience is the ability of a software to react to problems in one of its components and still provide the best possible service.Both your software and the underlying infrastructure must be resilient. If there is a problem, the end user should not know about it. The request must be handled and processed by another region. The end user should get the same level of service.
+
+- If there is a region level failure, for example, let's say Region A has gone down. The Azure Traffic Manager is smart enough to send all the requests to Region B. The end user gets the same response. He does not even know there is a region level failure. When Region A is back online, the Azure Traffic Manager will distribute the traffic between both the regions again.
+ 
+** Region Pairs
+
+- Azure regional pair, paired regions, or region pair, all these terms are used interchangeably and they refer to the same thing, i.e a pair of azure regions. So in simple terms, a regional pair consists of two regions within the same geography. 
+
+- An azure region is made up of one or more datacenters. If availability zones are enabled, an azure region contains a minimum of three availability zones. An Availability Zone is made up of one or more datacenters. So the point is, an Azure region contains one or more datacenters or 3 or more availability zones if enabled.
+
+- Most regions in a geography are paired to ensure business continuity and disaster recovery (BCDR). The following are a few examples of azure paired regions.
+
+- A regional pair consists of two regions within the same geography. However, there is one exception to this. Brazil South region is paired with South Central US region, which obviously, is outside of Brazil's geography
+
+**** Benefits of paired regions
+- Physical separation between datacenters
+- Region recovery in the event of an outage
+- Automatic Platform-provided replication
+- Data residency, compliance and legal requirements
+- Sequential system updates
+
+** Availability Zones
+
+- An Azure Availability Zone is a unique physical location within an Azure region. Each Availability Zone is made up of one or more datacenters with independent power, cooling, and networking. Not all Regions have Availability Zones. Regions that support Availability Zones have a minimum of three separate zones to ensure resiliency.
+
+- If one of the Availability Zones has gone down for some reason, we still have our applications and data available from the rest of the two Availability Zones. There is a physical separation between each Availability Zone and it is this separation that protects our applications and data from Datacenter failures. With Availability Zones, Azure offers industry best 99.99% VM uptime SLA. 
+
+** Geographies
+
+- An Azure geography is an area of the world that contains at least one Azure region. For example, India is a geography. Similarly United States and United Kingdom are geographies. 
+
+- Well, regulated data like financial, health care or credit data may not be allowed to leave the country. Legally your organisation is required to store such data in the same country where the operations are being carried out. So, if you select a geography like India for example, Azure ensures your data is not stored outside of India. Similarly if you select United States, the data stays inside the states. You have complete control on which geographies you want your data and applications to be deployed. You can be assured, Microsoft will not store customer data outside the geography you specify, except for certain non-regional services.
+
+- an Azure geography is an area of the world that contains one or more Azure regions. Azure region is a very important concept because every time you create an azure resource like a virtual machine for example, you need to specify the region where you want the resource, in this case, the virtual machine to be created. An azure region may also be paired-up with another azure region and there are several benefits of this paring. An azure region may also have availability zones.
+
+
+
+- 
